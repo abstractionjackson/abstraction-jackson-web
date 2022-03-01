@@ -1,9 +1,14 @@
 import { getPage } from "$lib/components/utils"
 
 export async function get(args) {
-    console.log(args)
-    const data = await getPage(args)
-    return {
-        body: data
+    try {
+        const data = await getPage(args)
+        return {
+            body: data
+        }
+    } catch (error) {
+        return {
+            status: 404
+        }
     }
 }
