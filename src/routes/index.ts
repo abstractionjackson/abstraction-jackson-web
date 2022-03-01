@@ -8,7 +8,7 @@ export async function get(args) {
         }
     } catch (error) {
         return {
-            status: 404
+            status: error
         }
     }
 }
