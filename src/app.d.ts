@@ -8,3 +8,15 @@ declare namespace App {
 	// interface Session {}
 	// interface Stuff {}
 }
+
+export type StrapiData<T> = {
+	id: number,
+	attributes: T
+}
+
+export type Page = {
+	heading: {
+		header: string,
+		subHeader: string
+	}
+}

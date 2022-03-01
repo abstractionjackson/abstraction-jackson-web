@@ -1,9 +1,16 @@
-<script>
-    export let header;
-    export let subHeader;
+<script lang='ts'>
+    export let id:number
+    export let content = {
+        header:'',
+        subHeader:''
+    }
+    const {
+        header,
+        subHeader
+    } = content;
 </script>
 
-<main>
+<main id={`header=${id}`}>
     <heading>
         <h1>{header}</h1>
         <h2>{subHeader}</h2>
