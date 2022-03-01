@@ -1,5 +1,8 @@
-export async function get({ locals }) {
+import { getPage } from "$lib/components/utils"
+
+export async function get(args) {
+    const data = await getPage(args)
     return {
-        body: locals
+        body: data
     }
 }
