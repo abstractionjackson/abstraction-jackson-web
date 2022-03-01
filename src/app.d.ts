@@ -4,7 +4,12 @@
 // for information about these interfaces
 declare namespace App {
 	// interface Locals {}
-	// interface Platform {}
+	interface Platform {
+		env: {
+			STRAPI_API_URL:string,
+			STRAPI_API_TOKEN: string
+		}
+	}
 	// interface Session {}
 	// interface Stuff {}
 }
