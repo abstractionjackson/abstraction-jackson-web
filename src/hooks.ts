@@ -1,10 +1,11 @@
 import qs from 'qs'
 
 export async function handle({ event, resolve }) {
+    console.log(event)
     //get the page being requested
     let STRAPI_API_TOKEN;
     let STRAPI_API_URL;
-    if (import.meta.env.MODE === 'production') {
+    if (import.meta.env.MODE === 'production' && event.platform) {
         STRAPI_API_TOKEN = event.platform.env.STRAPI_API_TOKEN
         STRAPI_API_URL = event.platform.env.STRAPI_API_URL
     } else {
@@ -25,7 +26,6 @@ export async function handle({ event, resolve }) {
         },
         populate:"*"
     })
-    console.log("Fetching page data...")
     const res = await fetch(`${STRAPI_API_URL}/api/pages?${query}`, {
         headers: {
             Authorization: `Bearer ${STRAPI_API_TOKEN}`
