@@ -19,7 +19,6 @@ export async function getPage({
     url,
     platform
 }) {
-    console.log("Get Page")
     const env = getEnv(platform)
 
     const query = qs.stringify({
@@ -39,7 +38,6 @@ export async function getPage({
     const data = await res.json()
     return data.data[0].attributes
 }
-
 export async function getPagesNamesAndSlugs({
     platform
 }) {
@@ -56,7 +54,6 @@ export async function getPagesNamesAndSlugs({
         body: data
     }
 }
-
 class Strapi {
     constructor({
         STRAPI_API_URL,
