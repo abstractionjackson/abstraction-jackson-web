@@ -12,7 +12,7 @@
 
 <main id={`header=${id}`}>
     <heading>
-        <h1>{header}</h1>
+        <h1 class="capitalize text-4xl">{header}</h1>
         <h2>{subHeader}</h2>
     </heading>
 </main>
