@@ -20,14 +20,28 @@
 <main>
 	<header>
 		<nav>
-			<ul>
-				{#each links as {href,label}}
-					<li>
-						<a href={href}>{label}</a>
-					</li>
-				{/each}
-			</ul>	
+			<a href="/">Home</a>
+			<a href="/projects">Projects</a>
+			<a href="/blog">Blog</a>
 		</nav>
 	</header>
-	</main>
-<slot />
+	<slot />
+</main>
+
+<style>
+	a {
+		margin: 1rem;
+		font-weight: 700;
+		font-size: 24px;
+		text-decoration: none;
+		transition: text-decoration 2s;
+		transition: color .5s;
+	}
+	a:hover {
+		color: rgb(218, 117, 59);
+		text-decoration: underline;
+	}
+	main {
+		padding: 1.75rem;
+	}
+</style>
